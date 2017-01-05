@@ -5,10 +5,10 @@
  * @license MIT
  */
 
-const redisInitor = require('./redis');
-const Throttle = require('./Throttle');
-const Config = require('./Config');
-const cbop = require('./widgets/cbop');
+const Config = require('./lib/Config');
+const Throttle = require('./lib/Throttle');
+const redisInitor = require('./lib/redis');
+const cbop = require('./lib/widgets/cbop');
 
 let _throttle; // eslint-disable-line no-underscore-dangle
 

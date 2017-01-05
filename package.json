@@ -1,6 +1,6 @@
 {
   "name": "semaforo",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A simple throttle program based on redis.",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,10 @@
   ],
   "author": "Liu Chong",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liuchong/node-semaforo/issues"
+  },
+  "homepage": "https://github.com/liuchong/node-semaforo#readme",
   "dependencies": {
     "ioredis": "^2.4.3"
   },
