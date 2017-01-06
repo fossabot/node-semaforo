@@ -5,6 +5,8 @@
  * @license MIT
  */
 
+'use strict';
+
 const Config = require('./lib/Config');
 const Throttle = require('./lib/Throttle');
 const redisInitor = require('./lib/redis');
