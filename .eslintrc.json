@@ -2,6 +2,7 @@
   "extends": ["eslint:recommended", "airbnb-base"],
   "rules": {
     "strict": "off",
+    "no-underscore-dangle": "off",
     "indent": ["error", 4],
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
