@@ -5,13 +5,13 @@
  * @license MIT
  */
 
-'use strict';
+'use strict'
 
-const Config = require('./lib/Config');
-const Throttle = require('./lib/Throttle');
-const redisInitor = require('./lib/redis');
+const Config = require('./lib/Config')
+const Throttle = require('./lib/Throttle')
+const redisInitor = require('./lib/redis')
 
-let _throttle; // eslint-disable-line no-underscore-dangle
+let _throttle // eslint-disable-line no-underscore-dangle
 
 /**
  * Init the module scope throttle instance.
@@ -22,15 +22,14 @@ let _throttle; // eslint-disable-line no-underscore-dangle
  * @param {object} [logger] - SUGGESTED optional logger, or else will log nothing
  * @returns {Promise} - returning a Promise
  */
-function init(comm, redisOrConf, limits, logger) {
-    return new Promise((resolve, reject) => {
-        redisInitor(redisOrConf, logger)
-            .then((redis) => {
-                const config = new Config(comm, redis, limits);
-                _throttle = new Throttle(config);
-                resolve(_throttle);
-            }, reject);
-    });
+function init (comm, redisOrConf, limits, logger) {
+  return new Promise((resolve, reject) => {
+    redisInitor(redisOrConf, logger).then(redis => {
+      const config = new Config(comm, redis, limits)
+      _throttle = new Throttle(config)
+      resolve(_throttle)
+    }, reject)
+  })
 }
 
 /**
@@ -39,14 +38,14 @@ function init(comm, redisOrConf, limits, logger) {
  * @returns {Throttle} - the throttle instance
  * @throws {Error} - throws if throttle has not been initialized
  */
-function get() {
-    if (_throttle) return _throttle;
-    throw new Error('throttle has not been inited');
+function get () {
+  if (_throttle) return _throttle
+  throw new Error('throttle has not been inited')
 }
 
 module.exports = Object.assign(Throttle, {
-    Throttle,
-    Config,
-    init,
-    get,
-});
+  Throttle,
+  Config,
+  init,
+  get
+})
