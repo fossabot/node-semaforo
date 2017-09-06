@@ -16,6 +16,10 @@
     "url": "https://github.com/liuchong/node-semaforo/issues"
   },
   "homepage": "https://github.com/liuchong/node-semaforo#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liuchong/node-semaforo"
+  },
   "dependencies": {
     "ioredis": "^2.4.3"
   },
