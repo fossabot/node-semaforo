@@ -1,6 +1,6 @@
 {
   "name": "semaforo",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple throttle program based on redis.",
   "main": "index.js",
   "scripts": {
@@ -21,10 +21,10 @@
     "url": "https://github.com/liuchong/node-semaforo"
   },
   "dependencies": {
-    "ioredis": "^2.4.3"
+    "ioredis": "^3.1.4"
   },
   "devDependencies": {
-    "eslint": "^4.6.1",
+    "eslint": "^4.7.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-config-standard-jsx": "^4.0.2",
     "eslint-plugin-import": "^2.7.0",
