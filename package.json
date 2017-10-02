@@ -2,9 +2,11 @@
   "name": "semaforo",
   "version": "1.0.3",
   "description": "A simple throttle program based on redis.",
-  "main": "index.js",
+  "main": "./lib/init.js",
   "scripts": {
-    "test": "eslint --ext .js index.js lib"
+    "test": "yarn lint && yarn jest",
+    "lint": "eslint --ext .js lib",
+    "jest": "jest --coverage --verbose `find lib -name *.test.js`"
   },
   "keywords": [
     "semaforo",
@@ -33,6 +35,6 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.3.0",
     "eslint-plugin-standard": "^3.0.1",
-    "jest": "^21.2.0"
+    "jest": "^21.2.1"
   }
 }
