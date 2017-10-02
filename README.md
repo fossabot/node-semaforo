@@ -9,6 +9,12 @@ semaforo
 
 A simple throttle program based on redis
 
+***note: NEED feature "async/await" to run unit test***
+
+## Usage
+
+Please refer to [init.test.js](./lib/init.test.js)
+
 ## License
 
   [MIT](LICENSE)

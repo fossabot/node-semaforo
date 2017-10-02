@@ -1,9 +1,14 @@
 language: node_js
+
+services:
+  - redis-server
+
 node_js:
-  - "6"
   - "7"
   - "8"
+
 install:
-  - npm install
+  - yarn install
+
 script:
-  - npm test
+  - yarn test
