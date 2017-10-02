@@ -11,19 +11,12 @@ local pexp = tonumber(ARGV[2])
 
 local pttl = tonumber(redis.call("PTTL", key))
 
+-- explain pttl:
 -- -1 if the key exists but has no associated expire
 -- -2 if the key does not exist
 
-if pttl == -1 or pttl > pexp then
-  -- fix limit number if need
-  local lim = tonumber(redis.call("GET", key))
-  if lim == nil or lim > limit then
-    redis.call("SET", key, limit)
-  end
-  -- fix expire time if not did set or been set to a wrong number
-  redis.call("PEXPIRE", key, pexp)
-elseif pttl == -2 then
-  -- set a key with expire time
+if pttl < 0 or pttl > pexp then
+  -- re-set key with expire time
   redis.call("PSETEX", key, pexp, limit)
 end
 
